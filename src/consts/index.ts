@@ -1,24 +1,37 @@
+const path = require('path')
 import * as yargs from "yargs";
 
-export let TargetBaseDir = ''
-
-export let enumDirectory: {
+export let enumDirectorys: {
   [propName: string]: string
 } = {
   'wx27a2f9c4826c1e12': './miniprogram'
-}
+} 
 
-export let enumWarehouse: {
+export let oldEnumDirectorys: {
+  [propName: string]: string
+} = {
+  'wx27a2f9c4826c1e12': './ba-taro'
+} 
+
+export let enumDirectory: string = ''
+
+export let oldEnumDirectory: string = ''
+
+export let enumWarehouses: {
   [propName: string]: string
 } = {
   'wx27a2f9c4826c1e12': 'git@tp-git.shopex.cn:shopex/watsons-mystore/ba-taro.git'
 }
 
-export let enumWarehouseKey: {
+export let enumWarehouse: string = ''
+
+export let enumWarehouseKeys: {
   [propName: string]: string
 } = {
   'wx27a2f9c4826c1e12': 'private.wx27a2f9c4826c1e12.key'
 }
+
+export let enumWarehouseKey: string = ''
 
 export let yargsObject: {
   env: string,
@@ -41,6 +54,9 @@ export function init(): void{
   yargsObject.desc = argv.desc
   yargsObject.appid = argv.appid
   yargsObject.version = argv.v
-  TargetBaseDir = enumDirectory[argv.appid]
+  enumDirectory = path.join(__dirname, `../../${enumDirectorys[argv.appid]}`)
+  oldEnumDirectory = path.join(__dirname, `../../${oldEnumDirectorys[argv.appid]}`)
+  enumWarehouse = enumWarehouses[argv.appid]
+  enumWarehouseKey = path.join(__dirname, `../key/${enumWarehouseKeys[argv.appid]}`)  
 }
 

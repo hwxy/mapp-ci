@@ -15,7 +15,7 @@
   },
   "scripts": {
     "ci:dev": "nodemon -e ts,tsx --exec ts-node ./src/index --env='dev' --branch='dev-next-test' --version='1.1.2'",
-    "ci:uat": "nodemon -e ts,tsx --exec ts-node ./src/index --env='uat' --branch='0723' --v='1.1.2' --desc='hello' --appid='wx27a2f9c4826c1e12'",
+    "ci:uat": "nodemon -e ts,tsx --exec ts-node ./src/index --env='uat' --branch='dev-next-test' --v='1.1.2' --desc='hello' --appid='wx27a2f9c4826c1e12'"
   },
   "keywords": [],
   "author": "",
