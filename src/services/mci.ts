@@ -45,8 +45,10 @@ class MiniprogramCi{
     }
     // 拉取小程序代码
     let cmdThree = `cd ${enumDirectory} && git reset --hard --quiet && git checkout ${branch} --quiet && git fetch --tags && git pull origin ${branch} --quiet && npm i`;
-    // 执行拉取shell
-    await execAsync(cmdThree);  
+    try{
+      // 执行拉取shell
+      await execAsync(cmdThree);  
+    }catch(e){}
     // 日志 
     debug('拉取完成', {
       env 
