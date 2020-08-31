@@ -44,8 +44,7 @@ class MiniprogramCi{
       debug('本地已有远程分支', {})
     }
     // 拉取小程序代码
-    let cmdThree = `cd ${enumDirectory} && git reset --hard --quiet && git checkout ${branch} --quiet && git fetch --tags && git pull origin ${branch} --quiet`;
-    // && npm i
+    let cmdThree = `cd ${enumDirectory} && git reset --hard --quiet && git checkout ${branch} --quiet && git fetch --tags && git pull origin ${branch} --quiet && npm i`;
     // 执行拉取shell
     await execAsync(cmdThree);  
     // 日志 
