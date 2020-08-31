@@ -47,7 +47,7 @@ class MiniprogramCi{
     let cmdThree = `cd ${enumDirectory} && git reset --hard --quiet && git checkout ${branch} --quiet`;
     // 执行拉取shell
     await execAsync(cmdThree);  
-    let cmdFour =  `git fetch --tags && git pull origin ${branch} --quiet && npm i`
+    let cmdFour =  `cd ${enumDirectory} && git pull origin ${branch} --quiet && npm i`
     await execAsync(cmdFour);  
     // 日志 
     debug('拉取完成', {
